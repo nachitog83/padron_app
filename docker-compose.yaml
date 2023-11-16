@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+    padron_app:
+      build:
+        context: ./
+        dockerfile: Dockerfile
+      stdin_open: true
+      tty: true
+      volumes:
+        - ./app:/app
+        - vscode-extensions:/root/.vscode-server/extensions
+
+volumes:
+  vscode-extensions:
